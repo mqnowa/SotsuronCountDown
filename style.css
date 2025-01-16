@@ -1,0 +1,44 @@
+.font-base {
+    font-family: "ZenlessZoneZero";
+    font-size: larger;
+}
+
+.center {
+    text-align: center;
+}
+
+.center2 {
+    padding-left: 14vw;
+}
+
+.countdown {
+    color: red;
+    font-size: 10vw;
+    font-family: "GenshinImpact";
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+.unit {
+    font-size: 4vw;
+}
+
+.large-bold {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "GenshinImpact";
+    src: url("GenshinImpact.ttf");
+}
+
+@font-face {
+    font-family: "HonkaiStarRail";
+    src: url("HonkaiStarRail.ttf");
+}
+
+@font-face {
+    font-family: "ZenlessZoneZero";
+    src: url("ZenlessZoneZero.ttf");
+}
