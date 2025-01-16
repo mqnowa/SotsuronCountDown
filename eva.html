@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卒論提出期限タイマー</title>
+    <link rel="stylesheet" href="eva.css" type="text/css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div style="position: relative;">
+        <!-- <div class="eva" style="position: absolute;padding: 1.3vw 0 0 22.2vw;font-size: 3.4vw;transform: scale(1, 1.5);">卒論提出まで</div>
+        <div class="eva" style="position: absolute;padding: 5.2vw 0 0 22.2vw;font-size: 3.4vw;transform: scale(1, 1.5);">あと</div>
+        <div class="countdown" style="position: absolute;margin: 7vw 0 0 25vw;font-size: 13vw;transform: scale(0.9,1);"><span id="cd-bac-day">00</span><span class="unit">日</span><span id="cd-bac-hour">00</span><span class="unit">時間</span></div>
+        <div class="countdown" style="position: absolute;margin: 21vw 0 0 25vw;font-size: 13vw;transform: scale(0.9,1);"><span id="cd-bac-min">00</span>:<span id="cd-bac-sec">00.0</span></div> -->
+        <div class="eva" style="position: absolute;padding: 1.3vw 0 0 22.2vw;font-size: 3.4vw;transform: scale(1, 1.5);">修論提出まで</div>
+        <div class="eva" style="position: absolute;padding: 5.2vw 0 0 22.2vw;font-size: 3.4vw;transform: scale(1, 1.5);">あと</div>
+        <div class="countdown" style="position: absolute;margin: 7vw 0 0 25vw;font-size: 13vw;transform: scale(0.9,1);"><span id="cd-mas-day">00</span><span class="unit">日</span><span id="cd-mas-hour">00</span><span class="unit">時間</span></div>
+        <div class="countdown" style="position: absolute;margin: 21vw 0 0 25vw;font-size: 13vw;transform: scale(0.9,1);"><span id="cd-mas-min">00</span>:<span id="cd-mas-sec">00.0</span></div>
+        <div class="eva" style="position: absolute;right: 0;margin: 4.5vw 7.5vw 0 0;font-size: 6vw;">内部</div>
+        <div class="eva" style="position: absolute;right: 0;margin: 16.5vw -1vw 0 0;font-size: 3vw;transform: scale(0.6, 1);">主電源供給システム</div>
+        <div style="position: absolute;margin: 4.5vw 0 0 43vw;font-size: 2vw;">THESIS SUBMISSION DEADLINE:</div>
+        <div style="position: absolute;right: 0;margin: 13vw 7.5vw 0 0;font-size: 2.4vw;">INTERNAL</div>
+        <div style="position: absolute;right: 0;margin: 20.4vw -2.7vw 0 0;font-size: 2vw;transform: scale(0.5,1);">MAIN ENERGY SUPPLY SYSTEM</div>
+        <div style="position: absolute;margin: 36vw 0 0 31.5vw;font-size: 3vw;">STOP</div>
+        <div style="position: absolute;margin: 36vw 0 0 42.8vw;font-size: 3vw;">SLOW</div>
+        <div style="position: absolute;margin: 36vw 0 0 52.5vw;font-size: 3vw;transform: scale(0.65, 1);">NORMAL</div>
+        <div style="position: absolute;margin: 36vw 0 0 65.2vw;font-size: 3vw;transform: scale(0.75, 1);">RACING</div>
+        <div id="mas-remain" class="center" style="color: black;">2000-01-01T00:00:00+09:00</div>
+        <div id="faild-to-fetch" class="center" style="color: red;" hidden>時刻同期に失敗したため、デバイスの時間を使用しています</div>
+    </div>
+</body>
+</html>

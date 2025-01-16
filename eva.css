@@ -1,0 +1,29 @@
+body {
+    background-image: url("eva.png");
+    background-size: cover;
+    color: yellow;
+}
+
+.eva {
+    letter-spacing: -0.2vw;
+    font-family: eva;
+}
+
+.countdown {
+    font-family: "7seg";
+}
+
+.unit {
+    font-family: "eva";
+    font-size: 3vw;
+}
+
+@font-face {
+    font-family: "eva";
+    src: url("eva.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "7seg";
+    src: url("DSEG7Classic-Bold.ttf");
+}

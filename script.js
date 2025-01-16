@@ -17,8 +17,10 @@ function main() {
     var time_local_last_refresh;
     var time_local_now;
 
-    document.getElementById("bac-remain").textContent = new Date(BACH_DEAD_LINE)
-    document.getElementById("mas-remain").textContent = new Date(MAST_DEAD_LINE)
+    if (BACH_CD_D != null)
+        document.getElementById("bac-remain").textContent = new Date(BACH_DEAD_LINE);
+    if (MAST_CD_D != null)
+        document.getElementById("mas-remain").textContent = new Date(MAST_DEAD_LINE);
 
     var refresh_time = async () => {
         try {
@@ -44,17 +46,21 @@ function main() {
     setInterval(() => {
         time_exact_now = time_exact_last_refresh + (new Date() - time_local_last_refresh);
 
-        bach_remain = (BACH_DEAD_LINE - time_exact_now) / 1000;
-        BACH_CD_D.textContent = ("0" + Math.floor(bach_remain / 86400)).slice(-2)
-        BACH_CD_H.textContent = ("0" + Math.floor(bach_remain / 3600 % 24)).slice(-2)
-        BACH_CD_M.textContent = ("0" + Math.floor(bach_remain / 60 % 60)).slice(-2)
-        BACH_CD_S.textContent = ("0" + (bach_remain % 60).toFixed(1)).slice(-4)
+        if (BACH_CD_D != null) {
+            bach_remain = (BACH_DEAD_LINE - time_exact_now) / 1000;
+            BACH_CD_D.textContent = ("0" + Math.floor(bach_remain / 86400)).slice(-2);
+            BACH_CD_H.textContent = ("0" + Math.floor(bach_remain / 3600 % 24)).slice(-2);
+            BACH_CD_M.textContent = ("0" + Math.floor(bach_remain / 60 % 60)).slice(-2);
+            BACH_CD_S.textContent = ("0" + (bach_remain % 60).toFixed(1)).slice(-4);
+        }
         
-        mast_remain = (MAST_DEAD_LINE - time_exact_now) / 1000;
-        MAST_CD_D.textContent = ("0" + Math.floor(mast_remain / 86400)).slice(-2)
-        MAST_CD_H.textContent = ("0" + Math.floor(mast_remain / 3600 % 24)).slice(-2)
-        MAST_CD_M.textContent = ("0" + Math.floor(mast_remain / 60 % 60)).slice(-2)
-        MAST_CD_S.textContent = ("0" + (mast_remain % 60).toFixed(1)).slice(-4)
+        if (MAST_CD_D != null) {
+            mast_remain = (MAST_DEAD_LINE - time_exact_now) / 1000;
+            MAST_CD_D.textContent = ("0" + Math.floor(mast_remain / 86400)).slice(-2);
+            MAST_CD_H.textContent = ("0" + Math.floor(mast_remain / 3600 % 24)).slice(-2);
+            MAST_CD_M.textContent = ("0" + Math.floor(mast_remain / 60 % 60)).slice(-2);
+            MAST_CD_S.textContent = ("0" + (mast_remain % 60).toFixed(1)).slice(-4);
+        }
     }, 1000 / 20);
 
     setInterval(() => {
