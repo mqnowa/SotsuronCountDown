@@ -2,6 +2,7 @@ body {
     background-image: url("eva.png");
     background-size: cover;
     color: yellow;
+    font-family: "NotoSansJP-Medium";
 }
 
 .eva {
@@ -26,4 +27,9 @@ body {
 @font-face {
     font-family: "7seg";
     src: url("DSEG7Classic-Bold.ttf");
+}
+
+@font-face {
+    font-family: "NotoSansJP-Medium";
+    src: url("NotoSansJP-Medium.ttf");
 }
