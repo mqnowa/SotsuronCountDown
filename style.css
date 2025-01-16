@@ -12,7 +12,7 @@
 }
 
 .countdown {
-    color: red;
+    color: rgb(241, 29, 29);
     font-size: 10vw;
     font-family: "GenshinImpact";
     font-feature-settings: "tnum";
@@ -26,6 +26,11 @@
 .large-bold {
     font-size: xx-large;
     font-weight: bold;
+}
+
+body {
+    background-color: #eeeeee;
+    color: #222222;
 }
 
 @font-face {
