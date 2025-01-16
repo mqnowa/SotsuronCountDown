@@ -9,6 +9,7 @@ function main() {
     const MAST_CD_H = document.getElementById("cd-mas-hour");
     const MAST_CD_M = document.getElementById("cd-mas-min");
     const MAST_CD_S = document.getElementById("cd-mas-sec");
+    const f2f = document.getElementById("faild-to-fetch");
 
     var bach_remain;
 
@@ -20,11 +21,22 @@ function main() {
     document.getElementById("mas-remain").textContent = new Date(MAST_DEAD_LINE)
 
     var refresh_time = async () => {
-        fetch("https://elp.emptybox.win/")
-            .then(res => res.json())
-            .then(data => time_exact_last_refresh = data.unix_time_ms);
-        // time_exact_last_refresh = Date.now();
-        time_local_last_refresh = Date.now();
+        try {
+            var res = await fetch("https://elp.emptybox.win/");
+            if (res.status == 200) {
+                time_exact_last_refresh = (await res.json()).unix_time_ms;
+                time_local_last_refresh = Date.now();
+                f2f.hidden = true;
+            } else {
+                time_exact_last_refresh = Date.now();
+                time_local_last_refresh = Date.now();
+                f2f.hidden = false;
+            }
+        } catch {
+            time_exact_last_refresh = Date.now();
+            time_local_last_refresh = Date.now();
+            f2f.hidden = false;
+        }
     }
 
     refresh_time();
