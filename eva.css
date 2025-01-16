@@ -1,7 +1,8 @@
 body {
     background-image: url("eva.png");
     background-size: cover;
-    color: yellow;
+    color: #ffd80b;
+    text-shadow: 0 0 10px #f73900;
     font-family: "NotoSansJP-Medium";
 }
 
