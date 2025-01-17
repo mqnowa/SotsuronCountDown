@@ -6,6 +6,11 @@ body {
     font-family: "NotoSansJP-Medium";
 }
 
+.sseg-bg {
+    color: #2c0a00;
+    text-shadow: none;
+}
+
 .eva {
     letter-spacing: -0.2vw;
     font-family: eva;
