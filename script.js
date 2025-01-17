@@ -1,5 +1,12 @@
-var getUrlParams = function() {
-    return window.location.search.substring(1).split('&').reduce(function(result, query) { var pair = query.split('='); result[pair[0]] = decodeURI(pair[1]); return result; }, {});
+function click_to_fullscreen() {
+    var isFullScreen = false;
+    addEventListener("click", () => {
+        if (isFullScreen)
+            document.exitFullscreen();
+        else
+            document.documentElement.requestFullscreen();
+        isFullScreen = !isFullScreen;
+    })
 }
 
 function main() {
@@ -81,6 +88,8 @@ function main() {
     setInterval(() => {
         refresh_time();
     }, 300000);
+
+    click_to_fullscreen();
 }
 
 addEventListener("DOMContentLoaded", () => main());
