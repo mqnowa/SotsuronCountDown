@@ -1,6 +1,15 @@
+var getUrlParams = function() {
+    return window.location.search.substring(1).split('&').reduce(function(result, query) { var pair = query.split('='); result[pair[0]] = decodeURI(pair[1]); return result; }, {});
+}
+
 function main() {
-    const BACH_DEAD_LINE = new Date("2025-01-31T16:00:00+09:00").getTime();
-    const MAST_DEAD_LINE = new Date("2025-01-30T16:00:00+09:00").getTime();
+    const parms = location.search.substr(1).split('&').reduce((p, c) => {
+        const cs = c.split('=');
+        return Object.assign(p, { [cs[0]]: cs[1] })
+    }, {});
+    console.log(parms.bdl)
+    const BACH_DEAD_LINE = new Date((parms.bdl) ? decodeURIComponent(parms.bdl) : "2025-01-31T16:00:00+09:00").getTime();
+    const MAST_DEAD_LINE = new Date((parms.mdl) ? decodeURIComponent(parms.mdl) : "2025-01-30T16:00:00+09:00").getTime();
     const BACH_CD_D = document.getElementById("cd-bac-day");
     const BACH_CD_H = document.getElementById("cd-bac-hour");
     const BACH_CD_M = document.getElementById("cd-bac-min");
@@ -10,6 +19,11 @@ function main() {
     const MAST_CD_M = document.getElementById("cd-mas-min");
     const MAST_CD_S = document.getElementById("cd-mas-sec");
     const f2f = document.getElementById("faild-to-fetch");
+
+    if (parms.sotsu)
+        document.getElementById("sotsu").textContent = decodeURIComponent(parms.sotsu);
+    if (parms.syuu)
+        document.getElementById("syuu").textContent = decodeURIComponent(parms.syuu);
 
     var bach_remain;
     var mast_remain;
