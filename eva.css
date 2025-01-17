@@ -20,6 +20,16 @@ body {
     font-size: 3vw;
 }
 
+.white {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffffaa;
+}
+
+.red {
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000aa;
+}
+
 @font-face {
     font-family: "eva";
     src: url("eva.otf") format("opentype");

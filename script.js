@@ -12,6 +12,7 @@ function main() {
     const f2f = document.getElementById("faild-to-fetch");
 
     var bach_remain;
+    var mast_remain;
 
     var time_exact_last_refresh;
     var time_local_last_refresh;
