@@ -73,6 +73,7 @@ function main() {
 
         if (BACH_CD_D != null) {
             bach_remain = (BACH_DEAD_LINE - time_exact_now) / 1000;
+            bach_remain = Math.max(bach_remain, 0);
             BACH_CD_D.textContent = ("0" + Math.floor(bach_remain / 86400)).slice(-2);
             BACH_CD_H.textContent = ("0" + Math.floor(bach_remain / 3600 % 24)).slice(-2);
             BACH_CD_M.textContent = ("0" + Math.floor(bach_remain / 60 % 60)).slice(-2);
@@ -108,6 +109,7 @@ function main() {
         
         if (MAST_CD_D != null) {
             mast_remain = (MAST_DEAD_LINE - time_exact_now) / 1000;
+            mast_remain = Math.max(mast_remain, 0);
             MAST_CD_D.textContent = ("0" + Math.floor(mast_remain / 86400)).slice(-2);
             MAST_CD_H.textContent = ("0" + Math.floor(mast_remain / 3600 % 24)).slice(-2);
             MAST_CD_M.textContent = ("0" + Math.floor(mast_remain / 60 % 60)).slice(-2);
