@@ -95,8 +95,6 @@ function main() {
                     BAC_CD_MS.style.opacity = 0.3;
                 }
             } else if (bach_remain < 259200) {
-                BAC_CD_DH.classList.add("warning");
-                BAC_CD_MS.classList.add("warning");
                 if (bach_remain % 1 > 0.5) {
                     BAC_CD_DH.style.opacity = 1;
                     BAC_CD_MS.style.opacity = 1;
@@ -126,7 +124,6 @@ function main() {
                     MAS_CD_DHMS.style.opacity = 0.3;
                 }
             } else if (mast_remain < 259200) {
-                MAS_CD_DHMS.classList.add("warning");
                 if (mast_remain % 1 > 0.5) {
                     MAS_CD_DHMS.style.opacity = 1;
                 } else {
