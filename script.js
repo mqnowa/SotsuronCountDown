@@ -99,8 +99,8 @@ function main() {
                     BAC_CD_DH.style.opacity = 1;
                     BAC_CD_MS.style.opacity = 1;
                 } else {
-                    BAC_CD_DH.style.opacity = 0.7;
-                    BAC_CD_MS.style.opacity = 0.7;
+                    BAC_CD_DH.style.opacity = 0.5;
+                    BAC_CD_MS.style.opacity = 0.5;
                 }
             }
         }
@@ -127,7 +127,7 @@ function main() {
                 if (mast_remain % 1 > 0.5) {
                     MAS_CD_DHMS.style.opacity = 1;
                 } else {
-                    MAS_CD_DHMS.style.opacity = 0.7;
+                    MAS_CD_DHMS.style.opacity = 0.5;
                 }
             }
         }
