@@ -26,6 +26,9 @@ function main() {
     const MAST_CD_M = document.getElementById("cd-mas-min");
     const MAST_CD_S = document.getElementById("cd-mas-sec");
     const f2f = document.getElementById("faild-to-fetch");
+    const BAC_CD_DH = document.getElementById("bac-cd-dh");
+    const BAC_CD_MS = document.getElementById("bac-cd-ms");
+    const MAS_CD_DHMS = document.getElementById("mas-cd-dhms");
 
     if (parms.sotsu)
         document.getElementById("sotsu").textContent = decodeURIComponent(parms.sotsu);
@@ -74,6 +77,33 @@ function main() {
             BACH_CD_H.textContent = ("0" + Math.floor(bach_remain / 3600 % 24)).slice(-2);
             BACH_CD_M.textContent = ("0" + Math.floor(bach_remain / 60 % 60)).slice(-2);
             BACH_CD_S.textContent = ("0" + (bach_remain % 60).toFixed(1)).slice(-4);
+            
+            if (bach_remain < 0) {
+                BAC_CD_DH.classList.remove("warning");
+                BAC_CD_MS.classList.remove("warning");
+                BAC_CD_DH.classList.add("danger");
+                BAC_CD_MS.classList.add("danger");
+            } else if (bach_remain < 86400) {
+                BAC_CD_DH.classList.add("warning");
+                BAC_CD_MS.classList.add("warning");
+                if (bach_remain % 1 > 0.5) {
+                    BAC_CD_DH.style.opacity = 1;
+                    BAC_CD_MS.style.opacity = 1;
+                } else {
+                    BAC_CD_DH.style.opacity = 0.3;
+                    BAC_CD_MS.style.opacity = 0.3;
+                }
+            } else if (bach_remain < 259200) {
+                BAC_CD_DH.classList.add("warning");
+                BAC_CD_MS.classList.add("warning");
+                if (bach_remain % 1 > 0.5) {
+                    BAC_CD_DH.style.opacity = 1;
+                    BAC_CD_MS.style.opacity = 1;
+                } else {
+                    BAC_CD_DH.style.opacity = 0.7;
+                    BAC_CD_MS.style.opacity = 0.7;
+                }
+            }
         }
         
         if (MAST_CD_D != null) {
@@ -82,6 +112,25 @@ function main() {
             MAST_CD_H.textContent = ("0" + Math.floor(mast_remain / 3600 % 24)).slice(-2);
             MAST_CD_M.textContent = ("0" + Math.floor(mast_remain / 60 % 60)).slice(-2);
             MAST_CD_S.textContent = ("0" + (mast_remain % 60).toFixed(1)).slice(-4);
+
+            if (mast_remain < 0) {
+                MAS_CD_DHMS.classList.remove("warning");
+                MAS_CD_DHMS.classList.add("danger");
+            } else if (mast_remain < 86400) {
+                MAS_CD_DHMS.classList.add("warning");
+                if (mast_remain % 1 > 0.5) {
+                    MAS_CD_DHMS.style.opacity = 1;
+                } else {
+                    MAS_CD_DHMS.style.opacity = 0.3;
+                }
+            } else if (mast_remain < 259200) {
+                MAS_CD_DHMS.classList.add("warning");
+                if (mast_remain % 1 > 0.5) {
+                    MAS_CD_DHMS.style.opacity = 1;
+                } else {
+                    MAS_CD_DHMS.style.opacity = 0.7;
+                }
+            }
         }
     }, 1000 / 20);
 

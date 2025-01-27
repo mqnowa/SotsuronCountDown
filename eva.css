@@ -7,8 +7,18 @@ body {
 }
 
 .sseg-bg {
-    color: #2c0a00;
+    color: #340c00;
     text-shadow: none;
+}
+
+.warning {
+    color: #ff6a00;
+    text-shadow: 0 0 10px #cc2200;
+}
+
+.danger {
+    color: #ff0000;
+    text-shadow: 0 0 10px #aa0000;
 }
 
 .eva {
@@ -33,6 +43,10 @@ body {
 .red {
     color: #ff0000;
     text-shadow: 0 0 5px #ff0000aa;
+}
+
+.transition {
+    transition: opacity ease-in-out 0.2s;
 }
 
 @font-face {
