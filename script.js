@@ -84,6 +84,8 @@ function main() {
                 BAC_CD_MS.classList.remove("warning");
                 BAC_CD_DH.classList.add("danger");
                 BAC_CD_MS.classList.add("danger");
+                BAC_CD_DH.style.opacity = 1;
+                BAC_CD_MS.style.opacity = 1;
             } else if (bach_remain < 86400) {
                 BAC_CD_DH.classList.add("warning");
                 BAC_CD_MS.classList.add("warning");
@@ -116,6 +118,7 @@ function main() {
             if (mast_remain < 0) {
                 MAS_CD_DHMS.classList.remove("warning");
                 MAS_CD_DHMS.classList.add("danger");
+                MAS_CD_DHMS.style.opacity = 1;
             } else if (mast_remain < 86400) {
                 MAS_CD_DHMS.classList.add("warning");
                 if (mast_remain % 1 > 0.5) {
