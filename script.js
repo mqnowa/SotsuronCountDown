@@ -79,13 +79,39 @@ function main() {
             BACH_CD_M.textContent = ("0" + Math.floor(bach_remain / 60 % 60)).slice(-2);
             BACH_CD_S.textContent = ("0" + (bach_remain % 60).toFixed(1)).slice(-4);
             
-            if (bach_remain < 0) {
+            if (bach_remain <= 0) {
+                BAC_CD_DH.classList.remove("danger");
+                BAC_CD_MS.classList.remove("danger");
+                BAC_CD_DH.classList.add("fatal");
+                BAC_CD_MS.classList.add("fatal");
+                BAC_CD_DH.classList.add("mildblink");
+                BAC_CD_MS.classList.add("mildblink");
+                BAC_CD_DH.style.opacity = 1;
+                BAC_CD_MS.style.opacity = 1;
+            } else if (bach_remain < 60) {
                 BAC_CD_DH.classList.remove("warning");
                 BAC_CD_MS.classList.remove("warning");
                 BAC_CD_DH.classList.add("danger");
                 BAC_CD_MS.classList.add("danger");
-                BAC_CD_DH.style.opacity = 1;
-                BAC_CD_MS.style.opacity = 1;
+                if (bach_remain % 0.5 > 0.25) {
+                    BAC_CD_DH.style.opacity = 1;
+                    BAC_CD_MS.style.opacity = 1;
+                } else {
+                    BAC_CD_DH.style.opacity = 0.5;
+                    BAC_CD_MS.style.opacity = 0.5;
+                }
+            } else if (bach_remain < 43200) {
+                BAC_CD_DH.classList.remove("warning");
+                BAC_CD_MS.classList.remove("warning");
+                BAC_CD_DH.classList.add("danger");
+                BAC_CD_MS.classList.add("danger");
+                if (bach_remain % 1 > 0.5) {
+                    BAC_CD_DH.style.opacity = 1;
+                    BAC_CD_MS.style.opacity = 1;
+                } else {
+                    BAC_CD_DH.style.opacity = 0.5;
+                    BAC_CD_MS.style.opacity = 0.5;
+                }
             } else if (bach_remain < 86400) {
                 BAC_CD_DH.classList.add("warning");
                 BAC_CD_MS.classList.add("warning");
@@ -93,8 +119,8 @@ function main() {
                     BAC_CD_DH.style.opacity = 1;
                     BAC_CD_MS.style.opacity = 1;
                 } else {
-                    BAC_CD_DH.style.opacity = 0.3;
-                    BAC_CD_MS.style.opacity = 0.3;
+                    BAC_CD_DH.style.opacity = 0.5;
+                    BAC_CD_MS.style.opacity = 0.5;
                 }
             } else if (bach_remain < 259200) {
                 if (bach_remain % 1 > 0.5) {
@@ -115,16 +141,33 @@ function main() {
             MAST_CD_M.textContent = ("0" + Math.floor(mast_remain / 60 % 60)).slice(-2);
             MAST_CD_S.textContent = ("0" + (mast_remain % 60).toFixed(1)).slice(-4);
 
-            if (mast_remain < 0) {
+            if (mast_remain <= 0) {
+                MAS_CD_DHMS.classList.remove("danger");
+                MAS_CD_DHMS.classList.add("fatal");
+                MAS_CD_DHMS.classList.add("mildblink");
+                MAS_CD_DHMS.style.opacity = 1;
+            } else if (mast_remain < 60) {
                 MAS_CD_DHMS.classList.remove("warning");
                 MAS_CD_DHMS.classList.add("danger");
-                MAS_CD_DHMS.style.opacity = 1;
+                if (mast_remain % 0.5 > 0.25) {
+                    MAS_CD_DHMS.style.opacity = 1;
+                } else {
+                    MAS_CD_DHMS.style.opacity = 0.5;
+                }
+            }  else if (mast_remain < 43200) {
+                MAS_CD_DHMS.classList.remove("warning");
+                MAS_CD_DHMS.classList.add("danger");
+                if (mast_remain % 1 > 0.5) {
+                    MAS_CD_DHMS.style.opacity = 1;
+                } else {
+                    MAS_CD_DHMS.style.opacity = 0.5;
+                }
             } else if (mast_remain < 86400) {
                 MAS_CD_DHMS.classList.add("warning");
                 if (mast_remain % 1 > 0.5) {
                     MAS_CD_DHMS.style.opacity = 1;
                 } else {
-                    MAS_CD_DHMS.style.opacity = 0.3;
+                    MAS_CD_DHMS.style.opacity = 0.5;
                 }
             } else if (mast_remain < 259200) {
                 if (mast_remain % 1 > 0.5) {

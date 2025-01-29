@@ -12,13 +12,32 @@ body {
 }
 
 .warning {
-    color: #ff6a00;
-    text-shadow: 0 0 10px #cc2200;
+    color: #ff7b00;
+    text-shadow: 0 0 10px #bb0c00;
 }
 
 .danger {
-    color: #ff0000;
-    text-shadow: 0 0 10px #aa0000;
+    color: #ff210d;
+    text-shadow: 0 0 15px #ac0000;
+}
+
+.fatal {
+    color: #ff1500;
+    text-shadow: 0 0 15px #ac0000;
+}
+
+.mildblink {
+    animation: blink 3s ease-out infinite alternate;
+}
+
+@keyframes blink {
+    0% {opacity:0.2;}
+    90% {opacity:1;}
+    100% {opacity:1;}
+}
+
+.transition {
+    transition: opacity ease-in-out 0.2s;
 }
 
 .eva {
@@ -43,10 +62,6 @@ body {
 .red {
     color: #ff0000;
     text-shadow: 0 0 5px #ff0000aa;
-}
-
-.transition {
-    transition: opacity ease-in-out 0.2s;
 }
 
 @font-face {
